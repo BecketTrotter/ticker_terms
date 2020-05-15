@@ -1,6 +1,6 @@
 # ticker_terms
 
-pypi package to generate all possible names combinations for public company executives. Used in the backend of [Newscatcher](https://newscatcherapi.com/).
+Source files for ticker_terms and all development related to it. pypi package to generate all possible names combinations for public company executives. Used in the backend of [Newscatcher](https://newscatcherapi.com/).
 
 ## Installation
 
