@@ -17,9 +17,9 @@ from ticker_terms import Company
 corp = Company('AAPL')
 corp.terms[0] #first executive
 corp.terms[0][1] #official name for first executive
-corp.terms[0][2:] #remaining possible nicknames
+corp.terms[0][1:] #remaining possible nicknames
 corp.terms[1] #second executive
 corp.terms[1][1] #official name for second executive
-corp.terms[1][2:] #remaining possible nicknames
+corp.terms[1][1:] #remaining possible nicknames
 
 ```

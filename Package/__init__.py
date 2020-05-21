@@ -32,26 +32,3 @@ class Company:
 				people.append(x)
 
 		return {'ticker': ticker, 'name': company_name, 'alt_name': alt_company_name, 'kp_alt': people, 'kp' : [x[0] for x in people]}
-
-def get_terms(ticker):
-	ticker = ticker.upper()
-	DB_FILE = pkg_resources.resource_filename('ticker_terms', 'DB/Stocks.db')
-	conn, c = open_connection(DB_FILE)
-
-	ticker = ticker.upper()
-	results = find_ticker(ticker, c)
-	alt_company_name = results[-1].strip()
-	ticker = results[0]
-	company_name = results[1]
-	people = []
-	conn.close()
-	NICKNAME_FILE = pkg_resources.resource_filename('ticker_terms', 'DB/Nicknames.db')
-	conn, c = open_connection(NICKNAME_FILE)
-	for x in results[2:-1]:
-		if x != 'NULL':
-			nicknames = find_nicknames(x, c)
-			x = generate_possible_names(x, c)
-			people.append(x)
-	conn.close()
-
-	return {'ticker': ticker, 'company_name': company_name, 'alt_company_name': alt_company_name, 'key_people_nicknames': people}
